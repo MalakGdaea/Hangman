@@ -1,13 +1,20 @@
 import React from "react";
 import Letter from "./Letter";
 
-const Letters = () => {
+const Letters = (props) => {
   return (
     <div>
       <div>Available Letters</div>
-      <Letter />
+      {Object.keys(props.characters).map((e) => (
+        <Letter
+          l={e}
+          class={props.characters[e] ? "crossed-out" : ""}
+          selectLetter={props.selectLetter}
+          key={e}
+        />
+      ))}
     </div>
   );
 };
 
-export default Letters
+export default Letters;

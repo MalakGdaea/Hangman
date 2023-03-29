@@ -1,17 +1,22 @@
 import React from "react";
+import Letter from "./Letter";
 
-const Solution = () => {
-  let wordLetters = ['_ ' , '_ ' , '_ ', '_ '];
+const Solution = (props) => {
+  let word = props.solution.word;
+  let wordLetters = [];
+
+  for (let i = 0; i < word.length; i++) {
+    wordLetters.push(<Letter l={props.characters[word[i]] ? word[i] : "__"} />);
+  }
   return (
     <div>
-      {wordLetters.map((l) => (
-        <span>{l}</span>
-      ))}
+      {wordLetters}
+      <br></br>
       <div>
-        <em>Your ideal mood when coding.</em>
+        <em>{props.solution.hint}</em>
       </div>
     </div>
   );
 };
 
-export default Solution
+export default Solution;
