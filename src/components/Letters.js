@@ -7,7 +7,7 @@ const Letters = (props) => {
       <div>Available Letters</div>
       {Object.keys(props.characters).map((e) => (
         <Letter
-          l={e}
+          letter={e}
           class={props.characters[e] ? "crossed-out" : ""}
           selectLetter={props.selectLetter}
           key={e}

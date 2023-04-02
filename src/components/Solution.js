@@ -6,7 +6,7 @@ const Solution = (props) => {
   let wordLetters = [];
 
   for (let i = 0; i < word.length; i++) {
-    wordLetters.push(<Letter l={props.characters[word[i]] ? word[i] : "__"} />);
+    wordLetters.push(<Letter letter={props.characters[word[i]] ? word[i] : "__"} />);
   }
   return (
     <div>

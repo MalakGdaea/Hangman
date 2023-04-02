@@ -1,10 +1,12 @@
-export default function EndGame(props) {
+import { winningMessage, losingMessage } from "../Constants";
+export default function EndGame({ isWon, word }) {
+  console.log(winningMessage);
   let message = "";
-  if (props.won) {
-    message = "Congratulations";
+  if (isWon) {
+    message = winningMessage;
   }
-  if (props.lost) {
-    message = `Good luck next time, the word is ${props.word}`;
+  if (isWon == false) {
+    message = losingMessage + `, the word is ${word}`;
   }
   return <h3>{message}</h3>;
 }
